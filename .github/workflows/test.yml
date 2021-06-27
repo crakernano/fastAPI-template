@@ -1,4 +1,4 @@
-name: Python package
+name: Test
 
 on: [push]
 
@@ -6,6 +6,22 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    services:
+      # Label used to access the service container
+      postgres:
+        # Docker Hub image
+        image: postgres
+        # Provide the password for postgres
+        env:
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_USER: postgres          
+          POSTGRES_DB: postgres
+        # Set health checks to wait until postgres has started
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
     strategy:
       matrix:
         python-version: [3.6, 3.7, 3.8, 3.9]
@@ -25,11 +41,11 @@ jobs:
           FLASK_ENV: development
           SECRET_KEY: sNK8ViVYopA8Vf2Zyr6rSgotBf3LBICOcSAzE4NWAAP1ztRl6nAIcg
           PORT: 8000
-          BBDD_ROOT_PASSWORD: password
-          BBDD_DATABASE: mydatabase
-          BBDD_USER: admin
-          BBDD_PASSWORD: admin
-          BBDD_HOST: database
+          BBDD_ROOT_PASSWORD: postgres
+          BBDD_DATABASE: postgres
+          BBDD_USER: postgres
+          BBDD_PASSWORD: postgres
+          BBDD_HOST: postgres
           BBDD_PORT: 5432
           SQLALCHEMY_TRACK_MODIFICATIONS: 'True'
 
