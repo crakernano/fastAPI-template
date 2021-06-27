@@ -59,11 +59,11 @@ jobs:
           FLASK_ENV: development
           SECRET_KEY: sNK8ViVYopA8Vf2Zyr6rSgotBf3LBICOcSAzE4NWAAP1ztRl6nAIcg
           PORT: 8000
-          BBDD_ROOT_PASSWORD: password
-          BBDD_DATABASE: mydatabase
-          BBDD_USER: admin
-          BBDD_PASSWORD: admin
-          BBDD_HOST: database
+          BBDD_ROOT_PASSWORD: postgres
+          BBDD_DATABASE: postgres
+          BBDD_USER: postgres
+          BBDD_PASSWORD: postgres
+          BBDD_HOST: postgres
           BBDD_PORT: 5432
           SQLALCHEMY_TRACK_MODIFICATIONS: 'True'
       - name: Test with pytest
@@ -73,10 +73,10 @@ jobs:
           FLASK_ENV: development
           SECRET_KEY: sNK8ViVYopA8Vf2Zyr6rSgotBf3LBICOcSAzE4NWAAP1ztRl6nAIcg
           PORT: 8000
-          BBDD_ROOT_PASSWORD: password
-          BBDD_DATABASE: mydatabase
-          BBDD_USER: admin
-          BBDD_PASSWORD: admin
-          BBDD_HOST: database
+          BBDD_ROOT_PASSWORD: postgres
+          BBDD_DATABASE: postgres
+          BBDD_USER: postgres
+          BBDD_PASSWORD: postgres
+          BBDD_HOST: postgres
           BBDD_PORT: 5432
           SQLALCHEMY_TRACK_MODIFICATIONS: 'True'
