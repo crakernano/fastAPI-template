@@ -85,6 +85,6 @@ jobs:
             BBDD_DATABASE: postgres
             BBDD_USER: postgres
             BBDD_PASSWORD: postgres
-            BBDD_HOST: postgres
+            BBDD_HOST: localhost
             BBDD_PORT: 5432
             SQLALCHEMY_TRACK_MODIFICATIONS: 'True'
